@@ -8,8 +8,9 @@ public class MngUnivDemo {
 
 	public static void main(String[] args) {		
 		List<MngUniv> lists = new ArrayList<MngUniv>();
+		MngUniv mu = new MngUniv();
 		while(true) {		
-			MngUniv mu = new MngUniv();
+//			MngUniv mu = new MngUniv();
 			mu.inputData();
 			lists.add(mu);
 			System.out.print("계속입력하시겠습니까? (Y/y) : ");
