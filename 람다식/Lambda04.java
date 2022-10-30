@@ -19,8 +19,8 @@ public class Lambda04 {
 
 	public static void main(String[] args) {
 		NewObject<String> s;
-		NewArray<Integer> ia;
-//		s = x -> x;
+		NewArray<Integer> ia;	
+		s = x -> x;			
 //		String str = "123";
 //		System.out.println( s.getObject(str));
 		
