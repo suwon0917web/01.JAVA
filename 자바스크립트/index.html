@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 테스트 페이지</title>
+</head>
+<body>
+
+<h1>자바스크립트 연습</h1>
+
+<!-- 주석단축키  Shift + Ctrl + / 인데.. 원하는 항목을 블럭으로 감싸고  실행 -->
+<!-- 자바스크립트는 script 태그안에서 작성 -->
+
+<script type="text/javascript">
+	const apple = '사과';
+	const orange = '오렌지';
+	const pear = '배';
+	const strawberry = '딸기';
+	
+	const fruits = [apple,orange,pear,strawberry];
+	console.log(fruits[0]);
+	console.log(fruits[1]);
+	console.log(fruits[2]);
+	console.log(fruits[3]);
+	
+	const arrayOfArray = [
+		[1,2,3],[4,5]
+	];
+	const a = 10;
+	const b = 20;
+	const variableArray = [a,b,30];
+	
+	const everything = ['사과','배',1,1.5,NaN,undefined,Infinity,true,false,null,'abc']
+	/* for (var i = 0; i < everything.length; i++) {
+		console.log(everything[i]);
+	} */
+	
+	/* 배열의 맨 앞에 데이터 추가 */
+	const target = ['나','다']	
+	target.unshift('가')
+	/* 배열의 맨 뒤에 데이터 추가 */
+	target.push('라')
+	
+	/* 배열의 요소 제거(마지막) */
+	target.pop()
+	/* 배열의 요소 제거(첫번째) */
+	target.shift()
+	/* 배열의 요소 제거(원하는개수와 위치) */
+	target.unshift('가')
+	target.push('라','마');
+	/* 콘솔에서 실행해 볼것 start end-1 데이터 추출(원본변경X)  */
+	target.slice(1);
+	target.slice(1,1)
+	
+	/* 삭제 start , deletecount*/
+	target.splice(1,1)
+	/* 요소찾기 */
+	target.includes('가')
+	
+	const MAX_LABEL = 1000;
+	
+	
+</script>
+
+</body>
+</html>
