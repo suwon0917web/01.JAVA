@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dom 객체_끝말잇기 게임_이벤트 리스너 방식</title>
+
+<body>
+<input type="text">
+<button>button</button><br>
+<div id = word>단어를 제시해 주세요</div>
+</body>
+
+<script type="text/javascript">
+	const number = Number(prompt('몇 명이 참가하나요?'));
+	const $button = document.querySelector('button');
+	const $input = document.querySelector('input');
+	const $word = document.querySelector("#word");  // Dom 구조의 데이터들중에서 태그안에 id = '값' 설정할수 있는데  
+	let word;   // 제시어
+	let newWord; // 현재 단어
+	
+	/* 이벤트 함수 */
+	const onClickButton = ()=>{
+		if(word == '단어를 제시해 주세요'){
+			word = newWord; // 단어
+			$word.textContent = word; // 객체
+		}else{ 
+			
+		}	
+	};	
+	const onInput = (event)=>{
+		newWord = event.target.value;  // 입력하는 단어를 현재 단어로 변경
+		console.log('newWord',event.target.value);
+	}
+	
+	/* 이벤트 리스너 */
+	$button.addEventListener('click', onClickButton);
+	$input.addEventListener('input', onInput);
+		
+	
+	/* dom 객체에 있는 button tag 객체를가져온다 */
+	/* button 객체에 이벤트리스너를 통해 이벤트를 등록한다 */
+	/* $button.addEventListener('click', onClickButton); */
+	/* 입력 tag에 대한 이벤트 처리   */
+	
+</script>
+
+
+
+</html>
+
+
+
+
