@@ -21,23 +21,23 @@
 	const $word = document.querySelector("#word");  // Dom 구조의 데이터들중에서 태그안에 id = '값' 설정할수 있는데
 	const $order = document.querySelector('#order');
 	let order; // 참가자 순서
-	let word;   // 제시어
+	let word = '';   // 제시어
 	let newWord; // 현재 단어
 	
 	/* 이벤트 함수 */
 	const onClickButton = ()=>{
-		if(newWord == undefined) return;
-		if(!word){ // 최초 실행할때 word는 비어있다. 그래서 undefined  !을 하면 true가되어서 실행
+		//if(word == undefined) return;
+		/* if(!word){ // 최초 실행할때 word는 비어있다. 그래서 undefined  !을 하면 true가되어서 실행
 			word = newWord; // 단어
 			$word.textContent = '제시어:'+word; // 태그.textContext 태그 내부의 문자열을 가져오거나 설정
 			order = 1;
 			$order.textContent = order+'번 참가자';			
-		}else{ 
+		}else{ */ 
 			if(word[word.length-1] === newWord[0]){  // 끝말잇기가 잘 연결된 경우
 				// 화면에 표시한다.
 				word = newWord;
 				$word.textContent = '제시어:'+word;
-				if(order > number){
+				if(order==undefined ||  order > number){
 					order = 1;
 					$order.textContent = order+'번 참가자';
 				}else{
@@ -48,7 +48,7 @@
 				// 끝말잇기가 실패
 				alert("올바르지 않은 단어 입니다.");								
 			}
-		}	
+		//}	
 		// 화면에 표시된 단어를 지워준다
 		// 입력태그는 value를 사용한다  input, select, textarea
 		$input.value = '';   
