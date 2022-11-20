@@ -12,3 +12,6 @@ button 객체에 대한 이벤트 함수를 만들어서(한개)<br>
 button1을 클릭하면 "button1 클릭했습니다." <br>
 라고 alert 해 주세요.<br>
 참고자료는 자유롭게 search
+
+<br><br>
+	if(word[word.length-1] === newWord[0]){  // 끝말잇기가 잘 연결된 경우   조건만 하나로 다중조건 만들어서 완성하기
