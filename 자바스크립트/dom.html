@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <title>Dom 객체_끝말잇기 게임</title>
 <script type="text/javascript">
-	document.addEventListener('DomContentLoaded', function(){
-		function change() {
-			alert("^^");
-		}
+	/* 화면이 로드가 끝나면 실행되는 문장 */
+	document.addEventListener('DOMContentLoaded', function(event){		
 		function click_1() {
 			alert("입력버튼 클릭");
 		}
 		const onClickButton = ()=>{
 			alert('버튼 클릭');
-		};	
+		};
+		
 		const button =  document.querySelector('button');
 		// 이벤트이름, 리스너 함수
 		button.addEventListener('click',onClickButton);
+		
 		/* const number = prompt("몇명이 참가합니까");
 		const realNumber = Number(number);
 		console.log(typeof realNumber); */
@@ -28,11 +28,17 @@
 
 </head>
 
+<script type="text/javascript">
+	function inputChange() {
+		alert("^^");
+	}
+</script>
+
 <body>
 	<div>
 		<span id='order'>1</span> 첫번째 참가자
 	</div>
-	<input type="text" onchange="change()">
+	<input type="text" onchange="inputChange()">   <!-- 함수가 미리 만들어져 있어야 함 -->
 	<!-- <button onclick="click_1()">입력</button> -->
 	<button>입력</button>
 	<button>버튼2</button>
