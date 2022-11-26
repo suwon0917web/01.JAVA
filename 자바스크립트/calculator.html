@@ -66,16 +66,22 @@
 		$result.value += number		
 	} */
 	const onClickNumber = (event)=> {	
-		if(operator!='')
-			numTwo = parseInt(event.target.textContent);
-		else
-			numOne = parseInt(event.target.textContent);
-		$result.value += event.target.textContent		
+		if(operator!=''){			
+			numTwo += event.target.textContent;
+			$result.value = numTwo; 
+		}
+		else{
+			numOne += event.target.textContent;
+			$result.value = numOne;
+		}
+				
 	}
 	
 	const onClickOperator = (event)=> {		
 		$operator.value = event.target.textContent;
 		if (event.target.textContent == '='){
+			numOne = parseInt(numOne); 
+			numTwo = parseInt(numTwo);
 			switch (operator) {
 			case 'X':
 				result = numOne * numTwo
@@ -93,8 +99,12 @@
 				break;
 			}
 			$result.value = result;
-		}else{
+		}else{			 
 			operator = event.target.textContent;
+			if(operator == 'C'){
+				$result.value = '0';
+				numOne = numTwo = operator = '';
+			}
 		}
 			
 				
