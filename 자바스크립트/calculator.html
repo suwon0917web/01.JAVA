@@ -41,6 +41,7 @@
 	let numOne = '';
 	let operator = '';
 	let numTwo = '';
+	let result = 0;	
 	const $operator = document.querySelector('#operator');
 	const $result = document.querySelector('#result');
 	
@@ -65,11 +66,38 @@
 		$result.value += number		
 	} */
 	const onClickNumber = (event)=> {	
-		if($operator)
-			numTwo = event.target.textContent
+		if(operator!='')
+			numTwo = parseInt(event.target.textContent);
 		else
-			numOne = event.target.textContent
+			numOne = parseInt(event.target.textContent);
 		$result.value += event.target.textContent		
+	}
+	
+	const onClickOperator = (event)=> {		
+		$operator.value = event.target.textContent;
+		if (event.target.textContent == '='){
+			switch (operator) {
+			case 'X':
+				result = numOne * numTwo
+				break;
+			case '/':			
+				result = numOne / numTwo
+				break;
+			case '-':			
+				result = numOne - numTwo
+				break;
+			case '+':			
+				result = numOne + numTwo
+				break;			
+			default:
+				break;
+			}
+			$result.value = result;
+		}else{
+			operator = event.target.textContent;
+		}
+			
+				
 	}
 	
 	
@@ -102,12 +130,12 @@
 	document.querySelector('#num-7').addEventListener('click',onClickNumber);
 	document.querySelector('#num-8').addEventListener('click',onClickNumber);
 	document.querySelector('#num-9').addEventListener('click',onClickNumber);
-	document.querySelector('#plus').addEventListener('click',()=>{});
-	document.querySelector('#minus').addEventListener('click',()=>{});
-	document.querySelector('#divide').addEventListener('click',()=>{});
-	document.querySelector('#multiply').addEventListener('click',()=>{});
-	document.querySelector('#calcuate').addEventListener('click',()=>{});
-	document.querySelector('#clear').addEventListener('click',()=>{});
+	document.querySelector('#plus').addEventListener('click',onClickOperator);
+	document.querySelector('#minus').addEventListener('click',onClickOperator);
+	document.querySelector('#divide').addEventListener('click',onClickOperator);
+	document.querySelector('#multiply').addEventListener('click',onClickOperator);
+	document.querySelector('#calcuate').addEventListener('click',onClickOperator);
+	document.querySelector('#clear').addEventListener('click',onClickOperator);
 </script>	
 </body>
 </html>
