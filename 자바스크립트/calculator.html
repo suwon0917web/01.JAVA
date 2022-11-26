@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">	
+	#operator {width: 50px; height:50px; margin:5px; text-align:center}
+	#result {width: 165px; height:50px; margin:5px; text-align:right}
+	button {width: 50px; height: 50px; margin: 5px}
+</style>
+</head>
+<body>
+	<input readonly id = 'operator'>
+	<input readonly type="number" id='result'>
+	<div class="row">
+		<button id='num-7'>7</button>
+		<button id='num-8'>8</button>
+		<button id='num-9'>9</button>
+		<button id='plus'>+</button>
+	</div>
+	<div class="row">
+		<button id='num-4'>4</button>
+		<button id='num-5'>5</button>
+		<button id='num-6'>6</button>
+		<button id='minus'>-</button>
+	</div>
+	<div class="row">
+		<button id='num-1'>1</button>
+		<button id='num-2'>2</button>
+		<button id='num-3'>3</button>
+		<button id='divide'>/</button>
+	</div>
+	<div class="row">
+		<button id='clear'>C</button>
+		<button id='num-0'>0</button>
+		<button id='calcuate'>=</button>
+		<button id='multiply'>X</button>
+	</div>
+<script type="text/javascript">
+	// 각각의 이벤트에 리스너 달기
+	let numOne = '';
+	let operator = '';
+	let numTwo = '';
+	const $operator = document.querySelector('#operator');
+	const $result = document.querySelector('#result');
+	
+	// 해결1
+	/* const onClickNumber = (number) => {
+		return () =>{
+		if($operator)
+			numTwo = number
+		else
+			numOne = number
+		$result.value += number
+		}
+	} */
+	
+	//해결 2
+	// 실제 이벤트가 발생했을때 동작하도록 정의한다. (number) =>(event)=>
+	/* const onClickNumber = (number) =>(event)=> {	
+		if($operator)
+			numTwo = number
+		else
+			numOne = number
+		$result.value += number		
+	} */
+	const onClickNumber = (event)=> {	
+		if($operator)
+			numTwo = event.target.textContent
+		else
+			numOne = event.target.textContent
+		$result.value += event.target.textContent		
+	}
+	
+	
+	// 문제가 되는 코딩
+	/* document.querySelector('#num-0').addEventListener('click',()=>{
+		if($operator)
+			numTwo = '0'
+		else
+			numOne = '0'
+		$result.value += '0'
+	}); */
+	
+	// 이슈 : 이벤트등록을 했을뿐인데.. 자동 실행이 된다면..
+	// 해결 1
+	// 이벤트를 리스너를 통해 등록할때 함수로 등록을하면 최초 dom구조와 자바스크립트가 로드될때
+	// 해당 리스턴의 이벤트를 등록한다. 이때 함수형태면 실행이 된다.
+	// 그리고 그 함수의 내용이 일반적인 내용이면 그 내용이 실행되고
+	// 리턴형태의 함수로 만들어주면 비로소 해당 함수의 내용이 이벤트함수의 내용으로 등록된다.
+	
+	// 해결2:
+	// 자동 실행이 안되게 한다	
+	
+	document.querySelector('#num-0').addEventListener('click',onClickNumber);
+	document.querySelector('#num-1').addEventListener('click',onClickNumber);
+	document.querySelector('#num-2').addEventListener('click',onClickNumber);
+	document.querySelector('#num-3').addEventListener('click',onClickNumber);
+	document.querySelector('#num-4').addEventListener('click',onClickNumber);
+	document.querySelector('#num-5').addEventListener('click',onClickNumber);
+	document.querySelector('#num-6').addEventListener('click',onClickNumber);
+	document.querySelector('#num-7').addEventListener('click',onClickNumber);
+	document.querySelector('#num-8').addEventListener('click',onClickNumber);
+	document.querySelector('#num-9').addEventListener('click',onClickNumber);
+	document.querySelector('#plus').addEventListener('click',()=>{});
+	document.querySelector('#minus').addEventListener('click',()=>{});
+	document.querySelector('#divide').addEventListener('click',()=>{});
+	document.querySelector('#multiply').addEventListener('click',()=>{});
+	document.querySelector('#calcuate').addEventListener('click',()=>{});
+	document.querySelector('#clear').addEventListener('click',()=>{});
+</script>	
+</body>
+</html>
