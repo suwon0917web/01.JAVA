@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="keyword" content="html 구조3">
+<title>HTML3</title>
+	<!-- 헤더영역
+	사이트의 전체 헤더 or 특정 영역의 헤더
+	검색 창이나 사이트 메뉴 삽입 -->
+	<div id = "logo">
+		<a href = "#">
+			<h1>여행</h1>
+		</a>
+	</div>
+	
+<nav>
+	<!-- 네비게이션 영역
+	웹 문서 위치에 영향을 받지 않음
+	문서 안에 여러개 만들수 있음(id로 구분) -->
+	<ul id = 'topMenu'>
+		<li><a href='#'>단체 여행</a></li>
+		<li><a href='#'>맞춤 여행</a></li>
+		<li><a href='#'>갤러리</a></li>
+		<li><a href='#'>문의하기</a></li>
+	</ul>
+</nav>	
+
+</head>
+<body>
+<!-- main 태그 : 핵심 컨텐츠를 담는 태그
+	핵심이 되는 내용
+	웹 문서마다 다르게 보여주는 내용으로 구성
+	웹 문서에서 한번만 사용
+article : 독립된 컨텐츠(따로떼어태어도 컨텐츠가 되는 내용) - section 태그를 포함할수 있음
+section : 컨텐츠 영역, 몇개의 컨텐츠로 묶는 용도  주의 : CSS적용을 위한 용도로 사용하지 말것	 
+aside : 사이드 바 영역 , 본문 내용외에 왼쪽이나 오른쪽 , 아래, 필수요소가 아님
+footer : 사이트 제작정보나 저작권 정보 연락처
+div : 여러요소를 묶는,  소스를 묶거나. 영역을 구분하거나 스타일 적용을 위해서
+	-->
+	<main class = 'contents'>
+		<section id = 'healing'>
+			<h2>몸과 마음이 치유되는 섬</h2>
+			
+		</section>
+		<section id = 'activity'>
+			<h2>다양한 엑티비티가 있는 섬</h2>
+			
+		</section>
+	</main>
+	
+	
+	
+</body>
+</html>
